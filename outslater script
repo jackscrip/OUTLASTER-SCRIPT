@@ -1,0 +1,29 @@
+local function ESP()
+   for i,v in pairs (workspace:GetDescendants()) do
+       if (v.Name == ("ClickDetector") or v.Name == ("TouchInterest") or v.Name == ("TouchTransmitter")) and v.Parent and v.Parent.Parent and v.Parent.Parent.Name ~= game.Players.LocalPlayer.Name  then
+           local instParent = nil;
+           if (v.Parent:IsA("MeshPart")) then
+               instParent = v.Parent
+           elseif (v.Parent.Parent:IsA("MeshPart")) then
+               instParent = v.Parent
+           end
+           if (instParent) then
+               local bill = Instance.new('BillboardGui',instParent)
+               bill.Name = instParent.Name.. 'NameEsp'
+               bill.Size = UDim2.new(1,200,1,30)
+               bill.Adornee = instParent
+               bill.AlwaysOnTop = true
+               local name = Instance.new('TextLabel',bill)
+               name.TextWrapped = true
+               name.Text = ("HINT")
+               name.Size = UDim2.new(.5,0,.5,0)
+               name.TextColor3 = Color3.new(204,0,0)
+               name.BackgroundTransparency = 1
+           end
+       end
+   end
+end
+game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(Died)
+wait(1.5)
+ESP()
+end)
