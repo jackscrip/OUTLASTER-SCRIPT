@@ -1,3 +1,5 @@
+--this is not mine
+
 local function ESP()
    for i,v in pairs (workspace:GetDescendants()) do
        if (v.Name == ("ClickDetector") or v.Name == ("TouchInterest") or v.Name == ("TouchTransmitter")) and v.Parent and v.Parent.Parent and v.Parent.Parent.Name ~= game.Players.LocalPlayer.Name  then
