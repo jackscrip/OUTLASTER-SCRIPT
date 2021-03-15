@@ -1,4 +1,4 @@
---this is not mine
+
 
 local function ESP()
    for i,v in pairs (workspace:GetDescendants()) do
@@ -29,3 +29,4 @@ game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(Died)
 wait(1.5)
 ESP()
 end)
+--this is not mine
